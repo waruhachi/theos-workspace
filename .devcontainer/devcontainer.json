@@ -1,0 +1,14 @@
+{
+	"name": "Theos",
+	"image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+	"features": { 
+		"ghcr.io/waruhachi/features/theos:latest": {} 
+	},
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"tale.logos-vscode"
+			]
+		}
+	}
+}
