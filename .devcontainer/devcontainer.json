@@ -10,5 +10,6 @@
 				"tale.logos-vscode"
 			]
 		}
-	}
+	},
+	"postCreateCommand" : "./install_sdks.sh"
 }
