@@ -2,7 +2,11 @@
 	"name": "Theos",
 	"image": "mcr.microsoft.com/devcontainers/base:ubuntu",
 	"features": { 
-		"ghcr.io/waruhachi/features/theos:latest": {} 
+		"ghcr.io/waruhachi/features/theos:latest": {},
+		"ghcr.io/waruhachi/features/sdks:latest": {},
+		"ghcr.io/waruhachi/features/swift:latest": {},
+		"ghcr.io/waruhachi/features/libgcuniversal:latest": {},
+		"ghcr.io/waruhachi/features/comet:latest": {}
 	},
 	"customizations": {
 		"vscode": {
@@ -11,6 +15,5 @@
 				"sswg.swift-lang"
 			]
 		}
-	},
-	"postCreateCommand" : "bash ./.devcontainer/postInstall.sh"
+	}
 }
