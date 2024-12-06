@@ -11,5 +11,5 @@
 			]
 		}
 	},
-	"postCreateCommand" : "chmod +x ./.devcontainer/postInstall.sh && ./.devcontainer/postInstall.sh"
+	"postCreateCommand" : "bash ./.devcontainer/postInstall.sh"
 }
