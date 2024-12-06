@@ -50,7 +50,7 @@ installSwift() {
     tar xzf "/tmp/swift-$SWIFT_VERSION-$SWIFT_PLATFORM_VERSION.tar.gz" -C "$HOME"
 
     echo "Adding Swift to PATH..."
-    export PATH="$SWIFT_INSTALL_DIR/usr/bin:$PATH"
+    export PATH="$SWIFT_INSTALL_DIR"/usr/bin:"${PATH}"
     echo "Swift $SWIFT_VERSION has been installed successfully."
 }
 
