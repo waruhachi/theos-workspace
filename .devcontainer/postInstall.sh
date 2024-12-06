@@ -52,7 +52,7 @@ installSwift() {
 
     echo "Extracting Swift archive..."
     tar xzf "$SWIFT_TMP_DIR/swift-$SWIFT_VERSION-$SWIFT_PLATFORM_VERSION.tar.gz" -C "$HOME"
-    mv "$HOME/swift-$SWIFT_VERSION-RELEASE-$SWIFT_PLATFORM_VERSION" "Swift"
+    mv "$HOME/swift-$SWIFT_VERSION-RELEASE-$SWIFT_PLATFORM_VERSION" "$HOME/Swift"
 
     echo "Adding Swift to PATH..."
     export PATH="$HOME/Swift/usr/bin:$PATH"
