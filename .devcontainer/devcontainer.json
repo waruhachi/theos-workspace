@@ -11,5 +11,5 @@
 			]
 		}
 	},
-	"postCreateCommand" : "./postInstall.sh"
+	"postCreateCommand" : "./.devcontainer/postInstall.sh"
 }
