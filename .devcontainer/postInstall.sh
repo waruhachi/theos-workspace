@@ -31,18 +31,18 @@ installSDK() {
     unzip -q "$SDK_TMP_DIR/repo.zip" -d "$SDK_TMP_DIR"
 
     # Find SDKs in the extracted folder
-    local sdk_path
-    sdk_path=$(find "$SDK_TMP_DIR" -type d -name "*.sdk*")
-    if [[ -z "$sdk_path" ]]; then
+    local sdk_paths
+    sdk_paths=$(find "$SDK_TMP_DIR" -type d -name "*.sdk")
+    
+    if [[ -z "$sdk_paths" ]]; then
         echo "No SDKs found in the repository. Exiting."
         exit 1
     fi
 
-    echo "SDKs found at: $sdk_path"
-
-    # Move all SDKs to the destination directory
-    echo "Moving all SDKs to $SDK_DEST_DIR..."
-    cp -r "$sdk_path"/* "$SDK_DEST_DIR/"
+    echo "Moving SDK directories to $SDK_DEST_DIR..."
+    for sdk_path in $sdk_paths; do
+        mv "$sdk_path" "$SDK_DEST_DIR/"
+    done
 
     echo "All SDKs have been successfully moved to $SDK_DEST_DIR."
 }
