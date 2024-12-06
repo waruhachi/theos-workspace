@@ -39,12 +39,12 @@ installSDK() {
         exit 1
     fi
 
-    echo "Moving SDK directories to $SDK_DEST_DIR..."
+    echo "Copying SDK directories to $SDK_DEST_DIR..."
     for sdk_path in $sdk_paths; do
-        mv "$sdk_path" "$SDK_DEST_DIR/"
+        cp -r "$sdk_path" "$SDK_DEST_DIR/"
     done
 
-    echo "All SDKs have been successfully moved to $SDK_DEST_DIR."
+    echo "All SDKs have been successfully copied to $SDK_DEST_DIR."
 }
 
 installLibGC() {
