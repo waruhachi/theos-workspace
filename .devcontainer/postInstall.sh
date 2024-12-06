@@ -1,9 +1,7 @@
 #!/bin/bash
 
-# Exit script on any error
 set -e
 
-# Variables
 SDK_REPO_URL="https://github.com/theos/sdks/archive/master.zip"
 SDK_DEST_DIR="$THEOS/sdks"
 SDK_TMP_DIR=$(mktemp -d)
@@ -11,27 +9,22 @@ SDK_TMP_DIR=$(mktemp -d)
 LIBGC_REPO_URL="https://github.com/MrGcGamer/LibGcUniversalDocumentation"
 LIBGC_TMP_DIR=$(mktemp -d)
 
-# Functions
 cleanup() {
     echo "Cleaning up temporary files..."
     rm -rf "$SDK_TMP_DIR"
     rm -rf "$LIBGC_TMP_DIR"
 }
 
-trap cleanup EXIT
-
 installSDK() {
     echo "Ensuring the SDK destination directory exists..."
     mkdir -p "$SDK_DEST_DIR"
 
-    # Download and extract the repository
     echo "Downloading SDK repository..."
     curl -L "$SDK_REPO_URL" -o "$SDK_TMP_DIR/repo.zip"
 
     echo "Extracting SDK repository..."
     unzip -q "$SDK_TMP_DIR/repo.zip" -d "$SDK_TMP_DIR"
 
-    # Find SDKs in the extracted folder
     local sdk_paths
     sdk_paths=$(find "$SDK_TMP_DIR" -type d -name "*.sdk")
     
@@ -64,6 +57,7 @@ installLibGC() {
     fi
 }
 
-# Main Script Execution
+trap cleanup EXIT
+
 installSDK
 installLibGC
