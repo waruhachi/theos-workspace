@@ -15,6 +15,7 @@ LIBGC_TMP_DIR=$(mktemp -d)
 cleanup() {
     echo "Cleaning up temporary files..."
     rm -rf "$SDK_TMP_DIR"
+    rm -rf "$LIBGC_TMP_DIR"
 }
 
 trap cleanup EXIT
