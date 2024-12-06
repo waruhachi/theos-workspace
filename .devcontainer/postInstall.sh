@@ -49,10 +49,10 @@ installSDK() {
 
 installLibGC() {
     echo "Cloning the LibGcUniversal repository..."
-    git clone "$LIBGC_REPO_URL" "$LIBGC_DEST_DIR"
+    git clone "$LIBGC_REPO_URL" "$LIBGC_TMP_DIR"
 
     echo "Navigating to the LibGcUniversal repository directory..."
-    cd "$LIBGC_DEST_DIR"
+    cd "$LIBGC_TMP_DIR"
 
     if [[ -x "./install.sh" ]]; then
         echo "Running the install.sh script..."
