@@ -47,6 +47,7 @@ installSwift() {
     curl -L "https://download.swift.org/swift-$SWIFT_VERSION-release/$SWIFT_PLATFORM/swift-$SWIFT_VERSION-RELEASE/swift-$SWIFT_VERSION-RELEASE-$SWIFT_PLATFORM_VERSION.tar.gz" -o "/tmp/swift-$SWIFT_VERSION-$SWIFT_PLATFORM_VERSION.tar.gz"
 
     echo "Extracting Swift archive..."
+    mkdir -p "$SWIFT_INSTALL_DIR"
     tar xzf "/tmp/swift-$SWIFT_VERSION-$SWIFT_PLATFORM_VERSION.tar.gz" -C "$SWIFT_INSTALL_DIR"
 
     echo "Adding Swift to PATH..."
