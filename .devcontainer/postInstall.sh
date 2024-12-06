@@ -32,7 +32,7 @@ installSDK() {
 
     # Find SDKs in the extracted folder
     local sdk_path
-    sdk_path=$(find "$SDK_TMP_DIR" -type d -name "*sdk*")
+    sdk_path=$(find "$SDK_TMP_DIR" -type d -name "*.sdk*")
     if [[ -z "$sdk_path" ]]; then
         echo "No SDKs found in the repository. Exiting."
         exit 1
