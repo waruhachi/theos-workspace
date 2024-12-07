@@ -22,6 +22,6 @@
         }
     },
     "remoteEnv" : {
-        "PATH" : "${containerEnv:PATH}:$HOME/Swift/usr/bin"
+        "PATH" : "${containerEnv:PATH}:/home/vscode/Swift/usr/bin"
     }
 }
