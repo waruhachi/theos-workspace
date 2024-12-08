@@ -2,10 +2,10 @@
     "name": "Theos",
     "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
     "features": { 
-        "ghcr.io/waruhachi/features/theos:latest": {},
-        "ghcr.io/waruhachi/features/swift:latest": {},
-        "ghcr.io/waruhachi/features/libgcuniversal:latest": {},
-        "ghcr.io/waruhachi/features/comet:latest": {}
+        "ghcr.io/waruhachi/features/theos:1.0.0": {},
+        "ghcr.io/waruhachi/features/swift:6.0.2": {},
+        "ghcr.io/waruhachi/features/libgcuniversal:1.7.0": {},
+        "ghcr.io/waruhachi/features/comet:1.0.5": {}
     },
     "overrideFeatureInstallOrder": [
         "ghcr.io/waruhachi/features/theos",
