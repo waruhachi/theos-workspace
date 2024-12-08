@@ -20,8 +20,5 @@
                 "sswg.swift-lang"
             ]
         }
-    },
-    "remoteEnv" : {
-        "PATH" : "${containerEnv:PATH}:/home/vscode/Swift/usr/bin"
     }
 }
