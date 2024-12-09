@@ -2,16 +2,22 @@
     "name": "Theos",
     "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
     "features": { 
+        "ghcr.io/devcontainers/features/python:latest": {},
+        "ghcr.io/devcontainers/features/github-cli:latest": {},
         "ghcr.io/waruhachi/features/theos:latest": {},
         "ghcr.io/waruhachi/features/swift:latest": {},
         "ghcr.io/waruhachi/features/libgcuniversal:latest": {},
-        "ghcr.io/waruhachi/features/comet:latest": {}
+        "ghcr.io/waruhachi/features/comet:latest": {},
+        "ghcr.io/waruhachi/features/remotelog:latest": {}
     },
     "overrideFeatureInstallOrder": [
+        "ghcr.io/devcontainers/features/python",
+        "ghcr.io/devcontainers/features/github-cli",
         "ghcr.io/waruhachi/features/theos",
         "ghcr.io/waruhachi/features/swift",
         "ghcr.io/waruhachi/features/libgcuniversal",
-        "ghcr.io/waruhachi/features/comet"
+        "ghcr.io/waruhachi/features/comet",
+        "ghcr.io/waruhachi/features/remotelog"
     ],
     "customizations": {
         "vscode": {
@@ -20,5 +26,12 @@
                 "sswg.swift-lang"
             ]
         }
-    }
+    },
+    "forwardPorts": [11909],
+    "portsAttributes": {
+        "11909": {
+            "label": "RemoteLog"
+        }
+    },
+    "postAttachCommand": "gh codespace ports visibility 11909:public -c $CODESPACE_NAME"
 }
