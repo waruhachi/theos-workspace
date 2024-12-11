@@ -35,5 +35,5 @@
             "label": "RemoteLog"
         }
     },
-    "postAttachCommand": "gh codespace ports visibility 11909:public -c $CODESPACE_NAME"
+    "postAttachCommand": "gh codespace ports visibility 11909:public -c $CODESPACE_NAME && echo \"alias remotelog='python3 /home/vscode/rlogserver.py'\" >> ~/.bashrc && source ~/.bashrc"
 }
